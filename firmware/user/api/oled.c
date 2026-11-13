@@ -319,6 +319,16 @@ void OLED_ShowChar(u8 x,u8 y,u8 chr,u8 size1,u8 mode)
 	
 }
 
+void OLED_ShowString(u8 x,u8 y,u8 *chr,u8 size1,u8 mode)
+{
+	while((*chr>=' ')&&(*chr<='~'))
+	{
+		OLED_ShowChar(x,y,*chr,size1,mode);
+		if(size1==8)x+=6;
+		else x+=size1/2;
+		chr++;
+	}
+}
 
 void OLED_ShowChinese(u8 x,u8 y,u8 *cha,u8 size,u8 mode)
 {

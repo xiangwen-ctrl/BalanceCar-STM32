@@ -27,7 +27,7 @@
 #define PWM4_CHANNEL	TIM_Channel_4
 
 #define PWM1_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM1_CHANNEL, TIM_CCx_Disable), (GPIOA->CRL &= ~(0xF<<24), GPIOA->CRL |= (0x3<<24)), GPIO_SetBits(PWM1_PORT, PWM1_PIN))
-#define PWM2_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM2_CHANNEL, TIM_CCx_Disable), (GPIOA->CRL &= ~(0xF<<28), GPIOA->CRL |= (0x3<<28)), GPIO_SetBits(PWM2_PORT, PWM2_PIN))
+#define PWM2_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM2_CHANNEL, TIM_CCx_Disable), (GPIOA->CRL &= ~(0xFU<<28), GPIOA->CRL |= (0x3U<<28)), GPIO_SetBits(PWM2_PORT, PWM2_PIN))
 #define PWM3_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM3_CHANNEL, TIM_CCx_Disable), (GPIOB->CRL &= ~(0xF<<0), GPIOB->CRL |= (0x3<<0)), GPIO_SetBits(PWM3_PORT, PWM3_PIN))
 #define PWM4_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM4_CHANNEL, TIM_CCx_Disable), (GPIOB->CRL &= ~(0xF<<4), GPIOB->CRL |= (0x3<<4)), GPIO_SetBits(PWM4_PORT, PWM4_PIN))
 
@@ -37,7 +37,7 @@
 //#define PWM4_DISABLE()	(TIM_CCxCmd(PWMTIM, PWM4_CHANNEL, TIM_CCx_Disable), (GPIOB->CRL &= ~(0xF<<4), GPIOB->CRL |= (0x3<<4)), GPIO_ResetBits(PWM4_PORT, PWM4_PIN))
 
 #define PWM1_ENABLE()		((GPIOA->CRL &= ~(0xF<<24), GPIOA->CRL |= (0xB<<24)), TIM_CCxCmd(PWMTIM, PWM1_CHANNEL, TIM_CCx_Enable))
-#define PWM2_ENABLE()		((GPIOA->CRL &= ~(0xF<<28), GPIOA->CRL |= (0xB<<28)), TIM_CCxCmd(PWMTIM, PWM2_CHANNEL, TIM_CCx_Enable))
+#define PWM2_ENABLE()		((GPIOA->CRL &= ~(0xFU<<28), GPIOA->CRL |= (0xBU<<28)), TIM_CCxCmd(PWMTIM, PWM2_CHANNEL, TIM_CCx_Enable))
 #define PWM3_ENABLE()		((GPIOB->CRL &= ~(0xF<<0), GPIOB->CRL |= (0xB<<0)), TIM_CCxCmd(PWMTIM, PWM3_CHANNEL, TIM_CCx_Enable))
 #define PWM4_ENABLE()		((GPIOB->CRL &= ~(0xF<<4), GPIOB->CRL |= (0xB<<4)), TIM_CCxCmd(PWMTIM, PWM4_CHANNEL, TIM_CCx_Enable))
 

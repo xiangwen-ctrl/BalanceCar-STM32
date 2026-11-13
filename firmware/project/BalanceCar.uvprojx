@@ -336,7 +336,7 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>--locale=english</MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
               <IncludePath>..\user;..\user\api;..\STM32F10x_StdPeriph_Driver\inc;..\user\api\oled;..\MPU6050\eMPL;..\project;..\user\api\MPU6050;..\user\api\MPU6050\eMPL</IncludePath>
